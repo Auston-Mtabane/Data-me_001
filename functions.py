@@ -86,11 +86,11 @@ def flatten_list(nested_list):
     c =[]
     for n in nested_list:
         try:
-            if len(n) == 1:
-                c.append(n[0])
-                continue
-            # if len(n):
-            #     c+=flatten_list(n)
+            # if len(n) == 1:
+            #     c.append(n[0])
+            #     continue
+            if len(n):
+                c+=flatten_list(n)
         except TypeError:
             c.append(n)
     return c

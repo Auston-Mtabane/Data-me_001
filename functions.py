@@ -6,7 +6,8 @@ def reverse_list(lst):
     :param lst: List of integers.
     :return: A list with elements in reverse order.
     """
-    pass  # Implement this
+    lst.reverse()
+    return lst
 
 def count_occurrences(lst, element):
     """
@@ -15,7 +16,7 @@ def count_occurrences(lst, element):
     :param element: Element to count.
     :return: Integer count of occurrences.
     """
-    pass  # Implement this
+    return lst.count(element)
 
 def get_keys_with_value(dct, value):
     """
@@ -24,7 +25,12 @@ def get_keys_with_value(dct, value):
     :param value: Value to find.
     :return: List of keys.
     """
-    pass  # Implement this
+    c = []
+    for key in dct.keys():
+        if dct[key] == value:
+            c.append(key)
+    
+    return c
 
 def merge_sorted_lists(lst1, lst2):
     """
@@ -33,7 +39,9 @@ def merge_sorted_lists(lst1, lst2):
     :param lst2: Second sorted list.
     :return: Merged sorted list.
     """
-    pass  # Implement this
+    lst1 += lst2
+    lst1.sort()
+    return lst1
 
 def find_second_largest(numbers):
     """
@@ -41,7 +49,11 @@ def find_second_largest(numbers):
     :param numbers: List of integers.
     :return: The second largest integer.
     """
-    pass  # Implement this
+    if len(numbers)< 2 or (len(numbers) == numbers.count(numbers[0])):
+        return None
+        
+    numbers.sort()
+    return numbers[-2]
 
 def is_anagram(str1, str2):
     """
@@ -55,7 +67,14 @@ def is_anagram(str1, str2):
     :param str2: Second string.
     :return: True if the strings are anagrams, False otherwise.
     """
-    pass  # Implement this
+    str1 = list(str1)
+    str2 = list(str2)
+    str1.sort()
+    str2.sort()
+    
+    
+    return str1 == str2
+    
 
 
 def flatten_list(nested_list):
@@ -64,7 +83,19 @@ def flatten_list(nested_list):
     :param nested_list: List of lists.
     :return: A flat list with all elements.
     """
-    pass  # Implement this
+    c =[]
+    for n in nested_list:
+        try:
+            if len(n) == 1:
+                c.append(n[0])
+                continue
+            # if len(n):
+            #     c+=flatten_list(n)
+        except TypeError:
+            c.append(n)
+    return c
+            
+            
 
 
 def remove_duplicates(lst):
@@ -73,7 +104,12 @@ def remove_duplicates(lst):
     :param lst: List of elements.
     :return: List without duplicates.
     """
-    pass  # Implement this
+    c = []
+    for n in lst:
+        if not (n in c):
+            c.append(n)
+        
+    return c
 
 def find_common_elements(lst1, lst2):
     """
@@ -82,4 +118,11 @@ def find_common_elements(lst1, lst2):
     :param lst2: Second list.
     :return: List of common elements.
     """
-    pass  # Implement this
+    c = []
+    for n in lst1:
+        if n in lst2:
+            c.append(n)
+    return n
+
+n = 8
+print(len(n))

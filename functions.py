@@ -122,7 +122,5 @@ def find_common_elements(lst1, lst2):
     for n in lst1:
         if n in lst2:
             c.append(n)
-    return n
+    return c
 
-n = 8
-print(len(n))
